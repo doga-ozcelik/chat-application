@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import ChatBox from "./components/ChatBox";
+import MessageInput from "./components/MessageInput";
 
 export const mockMessages = [
   {
@@ -46,6 +47,7 @@ function App() {
   return (
     <div className="App">
       <ChatBox messages={mockMessages} />
+      <MessageInput />
     </div>
   );
 }
