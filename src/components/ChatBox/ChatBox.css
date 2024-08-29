@@ -31,3 +31,8 @@
   height: 30px;
   width: 30px;
 }
+
+.Text {
+  width: 90%;
+  margin: 0.3rem 0;
+}

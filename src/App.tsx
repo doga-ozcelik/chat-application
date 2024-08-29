@@ -7,7 +7,8 @@ export const mockMessages = [
     id: "msg-1",
     senderId: "user-1",
     senderName: "Alice Johnson",
-    content: "Hey, how are you doing today?",
+    content:
+      "Hey, how are you doing today? Hey guys, do you want to grab lunch later? Hey guys, do you want to grab lunch later? Hey guys, do you want to grab lunch later? Hey guys, do you want to grab lunch later?",
   },
   {
     id: "msg-2",

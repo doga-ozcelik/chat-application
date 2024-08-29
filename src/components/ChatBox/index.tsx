@@ -18,7 +18,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({ messages }) => {
           <hr className="Divider" />
           <div className="Content">
             <div className="Sender">{message.senderName[0]}</div>
-            {message.content}
+            <p className="Text">{message.content}</p>
           </div>
         </div>
       ))}
