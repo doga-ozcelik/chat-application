@@ -13,7 +13,9 @@ const MessageInput: React.FC = () => {
         placeholder="Type a message..."
         className="Input"
       />
-      <button type="submit">Send</button>
+      <button type="submit" className="Button">
+        Send
+      </button>
     </div>
   );
 };
