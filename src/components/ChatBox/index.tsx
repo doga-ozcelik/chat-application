@@ -15,6 +15,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({ messages }) => {
     <div className="Container">
       {messages.map((message, index) => (
         <div key={index} className="Message">
+          <hr className="Divider" />
           {message.content}
         </div>
       ))}

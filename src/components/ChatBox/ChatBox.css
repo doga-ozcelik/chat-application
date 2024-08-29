@@ -9,3 +9,9 @@
 .Message {
   color: white;
 }
+
+.Divider {
+  border: none;
+  border-top: 1px solid #525252;
+  width: 90%;
+}
