@@ -1,6 +1,6 @@
 .Chat-box-container {
   overflow-y: scroll;
-  height: calc(100vh - 70px);
+  height: calc(100vh - 50px - 2rem);
 }
 
 .Message {
