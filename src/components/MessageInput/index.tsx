@@ -11,6 +11,7 @@ const MessageInput: React.FC = () => {
         value={input}
         onChange={(e) => setInput(e.target.value)}
         placeholder="Type a message..."
+        className="Input"
       />
       <button type="submit">Send</button>
     </div>
