@@ -13,12 +13,14 @@
 .Divider {
   border: none;
   border-top: 1px solid #525252;
-  width: 90%;
+  width: 97%;
+  margin: 2.5rem 0 2.5rem auto;
 }
 
 .Content {
   display: flex;
   gap: 1rem;
+  width: 100%;
 }
 
 .Sender {
