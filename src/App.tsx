@@ -46,8 +46,10 @@ export const mockMessages = [
 function App() {
   return (
     <div className="App">
-      <ChatBox messages={mockMessages} />
-      <MessageInput />
+      <div className="Container">
+        <ChatBox messages={mockMessages} />
+        <MessageInput />
+      </div>
     </div>
   );
 }

@@ -12,7 +12,7 @@ interface ChatBoxProps {
 
 const ChatBox: React.FC<ChatBoxProps> = ({ messages }) => {
   return (
-    <div className="Container">
+    <div className="Chat-box-container">
       {messages.map((message, index) => (
         <div key={index} className="Message">
           <hr className="Divider" />

@@ -5,7 +5,7 @@ const MessageInput: React.FC = () => {
   const [input, setInput] = useState<string>("");
 
   return (
-    <div className="Container">
+    <div className="Input-container">
       <input
         type="text"
         value={input}
