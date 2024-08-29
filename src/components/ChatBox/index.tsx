@@ -16,7 +16,10 @@ const ChatBox: React.FC<ChatBoxProps> = ({ messages }) => {
       {messages.map((message, index) => (
         <div key={index} className="Message">
           <hr className="Divider" />
-          {message.content}
+          <div className="Content">
+            <div className="Sender">{message.senderName[0]}</div>
+            {message.content}
+          </div>
         </div>
       ))}
     </div>
