@@ -1,8 +1,9 @@
 .Container {
   overflow-y: scroll;
   width: 100%;
-  max-width: 600px;
-  background-color: blue;
+  max-width: 800px;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 .Message {
