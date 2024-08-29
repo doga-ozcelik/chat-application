@@ -26,6 +26,7 @@
 .Sender {
   font-weight: bold;
   border: 0.5px solid #525252;
+  background-color: #262626;
   border-radius: 5px;
   display: flex;
   align-items: center;
