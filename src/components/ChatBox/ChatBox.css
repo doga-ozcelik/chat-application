@@ -1,0 +1,10 @@
+.Container {
+  overflow-y: scroll;
+  width: 100%;
+  max-width: 600px;
+  background-color: blue;
+}
+
+.Message {
+  color: white;
+}
