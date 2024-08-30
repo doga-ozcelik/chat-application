@@ -69,6 +69,11 @@ const MessageInput: React.FC<MessageInputProps> = ({ onSendMessage }) => {
     });
   };
 
+  const handleSelectSuggestion = (suggestion: string) => {
+    setInput(suggestion);
+    setSuggestions([]);
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (input.trim()) {
@@ -90,6 +95,7 @@ const MessageInput: React.FC<MessageInputProps> = ({ onSendMessage }) => {
             <li
               key={index}
               style={index === 0 ? { borderTop: "none" } : {}}
+              onClick={() => handleSelectSuggestion(suggestion)}
               className="List-item"
             >
               {suggestion}
