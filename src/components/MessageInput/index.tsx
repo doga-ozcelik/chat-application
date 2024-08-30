@@ -34,10 +34,20 @@ const commonPhrases = [
 const MessageInput: React.FC<MessageInputProps> = ({ onSendMessage }) => {
   const [input, setInput] = useState<string>("");
   const [showComboBox, setShowComboBox] = useState(false);
+  const [suggestions, setSuggestions] = useState<string[]>([]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setInput(value);
+
+    if (input.length > 0) {
+      const filteredPhrases = commonPhrases.filter((phrase) =>
+        phrase.toLowerCase().startsWith(input.toLowerCase())
+      );
+      setSuggestions(filteredPhrases);
+    } else {
+      setSuggestions([]);
+    }
 
     if (value.includes("/select")) {
       setShowComboBox(true);
@@ -74,17 +84,19 @@ const MessageInput: React.FC<MessageInputProps> = ({ onSendMessage }) => {
 
   return (
     <form onSubmit={handleSubmit} className="Input-container">
-      <ul className="List">
-        {commonPhrases.map((phrase, index) => (
-          <li
-            key={index}
-            style={index === 0 ? { borderTop: "none" } : {}}
-            className="List-item"
-          >
-            {phrase}
-          </li>
-        ))}
-      </ul>
+      {suggestions.length > 0 && (
+        <ul className="List">
+          {suggestions.map((suggestion, index) => (
+            <li
+              key={index}
+              style={index === 0 ? { borderTop: "none" } : {}}
+              className="List-item"
+            >
+              {suggestion}
+            </li>
+          ))}
+        </ul>
+      )}
       <input
         type="text"
         value={input}
