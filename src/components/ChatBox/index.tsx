@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./ChatBox.css";
 import { Message } from "../../types";
 
@@ -7,8 +7,16 @@ interface ChatBoxProps {
 }
 
 const ChatBox: React.FC<ChatBoxProps> = ({ messages }) => {
+  const chatBoxRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (chatBoxRef.current) {
+      chatBoxRef.current.scrollTop = chatBoxRef.current.scrollHeight;
+    }
+  }, [messages]);
+
   return (
-    <div className="Chat-box-container">
+    <div className="Chat-box-container" ref={chatBoxRef}>
       {messages.map((message, index) => (
         <div key={index} className="Message">
           <hr
