@@ -1,6 +1,11 @@
 .Chat-box-container {
   overflow-y: scroll;
   height: calc(100vh - 50px - 2rem);
+  scrollbar-width: none;
+}
+
+.your-element::-webkit-scrollbar {
+  display: none;
 }
 
 .Message {
