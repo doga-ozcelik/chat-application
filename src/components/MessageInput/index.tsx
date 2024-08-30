@@ -6,6 +6,8 @@ interface MessageInputProps {
   onSendMessage: (message: Message) => void;
 }
 
+const options = ["Option 1", "Option 2", "Option 3", "Option 4", "Option 5"];
+
 const MessageInput: React.FC<MessageInputProps> = ({ onSendMessage }) => {
   const [input, setInput] = useState<string>("");
 
@@ -31,6 +33,16 @@ const MessageInput: React.FC<MessageInputProps> = ({ onSendMessage }) => {
         placeholder="Type a message..."
         className="Input"
       />
+      <select className="Select">
+        <option value="" disabled selected>
+          Select an option
+        </option>
+        {options.map((option, index) => (
+          <option key={index} value={option}>
+            {option}
+          </option>
+        ))}
+      </select>
       <button type="submit" className="Button">
         Send
       </button>
