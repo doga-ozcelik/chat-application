@@ -1,13 +1,9 @@
 import React from "react";
 import "./ChatBox.css";
+import { Message } from "../../types";
 
 interface ChatBoxProps {
-  messages: {
-    id: string;
-    senderId: string;
-    senderName: string;
-    content: string;
-  }[];
+  messages: Message[];
 }
 
 const ChatBox: React.FC<ChatBoxProps> = ({ messages }) => {
