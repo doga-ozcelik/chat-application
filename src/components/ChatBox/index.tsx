@@ -11,7 +11,10 @@ const ChatBox: React.FC<ChatBoxProps> = ({ messages }) => {
     <div className="Chat-box-container">
       {messages.map((message, index) => (
         <div key={index} className="Message">
-          <hr className="Divider" />
+          <hr
+            className="Divider"
+            style={index === 0 ? { display: "none" } : {}}
+          />
           <div className="Content">
             <div className="Sender">{message.senderName[0]}</div>
             <p className="Text">{message.content}</p>
