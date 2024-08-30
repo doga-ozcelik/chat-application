@@ -23,11 +23,24 @@ const MessageInput: React.FC<MessageInputProps> = ({ onSendMessage }) => {
     }
   };
 
+  const handleOptionSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const option = e.target.value;
+    setShowComboBox(false);
+    setInput("");
+
+    onSendMessage({
+      id: Math.random().toString(36).slice(2, 9),
+      senderId: "user",
+      senderName: "You",
+      content: option,
+    });
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (input.trim()) {
       onSendMessage({
-        id: Math.random().toString(36).substr(2, 9),
+        id: Math.random().toString(36).slice(2, 9),
         senderId: "user",
         senderName: "You",
         content: input,
@@ -46,7 +59,7 @@ const MessageInput: React.FC<MessageInputProps> = ({ onSendMessage }) => {
         className="Input"
       />
       {showComboBox && (
-        <select className="Select">
+        <select className="Select" onChange={handleOptionSelect}>
           <option value="" disabled selected>
             Select an option
           </option>
