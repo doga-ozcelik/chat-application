@@ -8,6 +8,25 @@
   gap: 0.5rem;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
+.List {
+  list-style-type: none;
+  background-color: #393939;
+  border: 0.5px solid #525252;
+  border-radius: 5px;
+  padding: 0;
+  height: 100px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  margin: 0;
+  position: absolute;
+  bottom: calc(50px + 1rem);
+  color: white;
+}
+
 .Input {
   width: 100%;
 }

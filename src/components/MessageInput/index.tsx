@@ -8,6 +8,29 @@ interface MessageInputProps {
 
 const options = ["Option 1", "Option 2", "Option 3", "Option 4", "Option 5"];
 
+const commonPhrases = [
+  "Hello!",
+  "How are you?",
+  "Thank you!",
+  "Good morning",
+  "Good night",
+  "What’s up?",
+  "I’ll be there soon",
+  "Let me check",
+  "See you later",
+  "I agree with you",
+  "Could you clarify?",
+  "I'm on my way",
+  "Let’s do it!",
+  "That sounds great",
+  "I’m not sure",
+  "Can you help me?",
+  "I'll get back to you",
+  "That's interesting",
+  "Let's discuss this",
+  "I appreciate it",
+];
+
 const MessageInput: React.FC<MessageInputProps> = ({ onSendMessage }) => {
   const [input, setInput] = useState<string>("");
   const [showComboBox, setShowComboBox] = useState(false);
@@ -51,6 +74,11 @@ const MessageInput: React.FC<MessageInputProps> = ({ onSendMessage }) => {
 
   return (
     <form onSubmit={handleSubmit} className="Input-container">
+      <ul className="List">
+        {commonPhrases.map((phrase, index) => (
+          <li key={index}>{phrase}</li>
+        ))}
+      </ul>
       <input
         type="text"
         value={input}
