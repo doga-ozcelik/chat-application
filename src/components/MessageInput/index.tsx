@@ -76,7 +76,13 @@ const MessageInput: React.FC<MessageInputProps> = ({ onSendMessage }) => {
     <form onSubmit={handleSubmit} className="Input-container">
       <ul className="List">
         {commonPhrases.map((phrase, index) => (
-          <li key={index}>{phrase}</li>
+          <li
+            key={index}
+            style={index === 0 ? { borderTop: "none" } : {}}
+            className="List-item"
+          >
+            {phrase}
+          </li>
         ))}
       </ul>
       <input
