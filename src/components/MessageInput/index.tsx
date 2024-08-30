@@ -10,6 +10,18 @@ const options = ["Option 1", "Option 2", "Option 3", "Option 4", "Option 5"];
 
 const MessageInput: React.FC<MessageInputProps> = ({ onSendMessage }) => {
   const [input, setInput] = useState<string>("");
+  const [showComboBox, setShowComboBox] = useState(false);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setInput(value);
+
+    if (value.includes("/select")) {
+      setShowComboBox(true);
+    } else {
+      setShowComboBox(false);
+    }
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,20 +41,22 @@ const MessageInput: React.FC<MessageInputProps> = ({ onSendMessage }) => {
       <input
         type="text"
         value={input}
-        onChange={(e) => setInput(e.target.value)}
+        onChange={handleInputChange}
         placeholder="Type a message..."
         className="Input"
       />
-      <select className="Select">
-        <option value="" disabled selected>
-          Select an option
-        </option>
-        {options.map((option, index) => (
-          <option key={index} value={option}>
-            {option}
+      {showComboBox && (
+        <select className="Select">
+          <option value="" disabled selected>
+            Select an option
           </option>
-        ))}
-      </select>
+          {options.map((option, index) => (
+            <option key={index} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+      )}
       <button type="submit" className="Button">
         Send
       </button>
