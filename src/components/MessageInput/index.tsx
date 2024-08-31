@@ -65,6 +65,7 @@ const MessageInput: React.FC<MessageInputProps> = ({ onSendMessage }) => {
       id: Math.random().toString(36).slice(2, 9),
       senderId: "user",
       senderName: "You",
+      type: "text",
       content: option,
     });
   };
@@ -76,13 +77,35 @@ const MessageInput: React.FC<MessageInputProps> = ({ onSendMessage }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const message = {
+      id: Math.random().toString(36).slice(2, 9),
+      senderId: "user",
+      senderName: "You",
+    };
     if (input.trim()) {
-      onSendMessage({
-        id: Math.random().toString(36).slice(2, 9),
-        senderId: "user",
-        senderName: "You",
-        content: input,
-      });
+      if (input.includes("/image ")) {
+        const parts = input.split(" ");
+        const imageNumber = parseInt(parts[1], 10);
+        if (!isNaN(imageNumber)) {
+          onSendMessage({
+            ...message,
+            type: "image",
+            content: `https://picsum.photos/200/300?random=${imageNumber}`,
+          });
+        } else {
+          onSendMessage({
+            ...message,
+            type: "text",
+            content: input,
+          });
+        }
+      } else {
+        onSendMessage({
+          ...message,
+          type: "text",
+          content: input,
+        });
+      }
       setInput("");
     }
   };
