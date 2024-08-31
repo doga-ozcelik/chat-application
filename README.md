@@ -1,46 +1,76 @@
-# Getting Started with Create React App
+# Chat Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Overview
 
-## Available Scripts
+This project is a simple chat application built with React and TypeScript.
 
-In the project directory, you can run:
+## Setup and Run Instructions
 
-### `npm start`
+### Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Node.js (v14.x or later)
+- npm (v6.x or later)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Installation
 
-### `npm test`
+1. Clone the repository:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+  https://github.com/berkpeker2707/WAIPE.git
+```
 
-### `npm run build`
+2. Install dependencies:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+  npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To start the application in development mode, run:
 
-### `npm run eject`
+```bash
+  npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+This will start the application and open it in your default browser at `http://localhost:3000`.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Running Tests
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+To run the unit and integration tests:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
+  npm test
+```
 
-## Learn More
+## Explanation of Key Design Decisions and Trade-offs
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Component-Based Structure:** The application is designed using React components to ensure modularity and reusability. Each component handles a specific piece of functionality, making it easy to manage and extend.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **TypeScript for Type Safety:** TypeScript is used to enforce type safety across the application. This helps in catching potential bugs during development and ensures better maintainability.
+
+- **React Testing Library:** We chose React Testing Library for its simplicity and its ability to encourage testing the application from the user’s perspective. This aligns well with React’s component-driven architecture.
+
+- **Separation of Concerns:** The application is divided into components, hooks, and tests, ensuring a clear separation of concerns. This makes the codebase easier to navigate and maintain.
+
+## List of Third-Party Libraries Used and Justification for Each
+
+- **React:** The core library for building the user interface.
+
+- **TypeScript:** Used for adding static type definitions to JavaScript, improving code quality and maintainability.
+
+- **React Testing Library:** Chosen for its focus on testing React components from the user's perspective.
+
+- **Jest:** Used as the test runner, providing a comprehensive solution for unit and integration testing.
+
+## Any Challenges Faced and How You Overcame Them
+
+- **Implementing a Full-Height and Scrollable Chatbox:** Ensuring the chatbox filled the full height of the screen while being scrollable was challenging.
+
+## Ideas for Future Improvements
+
+- **Real-time Messaging:** Implement real-time message updates using WebSockets or Firebase to provide a more interactive user experience.
+
+- **Improved Styling:** Enhance the UI by incorporating a modern design framework such as Tailwind CSS or Material-UI.
+
+- **Advanced Input Features:** Add features like emoji support, markdown formatting, and file attachments to make the chat more versatile.
