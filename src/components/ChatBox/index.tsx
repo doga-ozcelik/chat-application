@@ -25,7 +25,11 @@ const ChatBox: React.FC<ChatBoxProps> = ({ messages }) => {
           />
           <div className="Content">
             <div className="Sender">{message.senderName[0]}</div>
-            <p className="Text">{message.content}</p>
+            {message.type === "text" ? (
+              <p className="Text">{message.content}</p>
+            ) : (
+              <img src={message.content} alt="Random Img" className="Image" />
+            )}
           </div>
         </div>
       ))}

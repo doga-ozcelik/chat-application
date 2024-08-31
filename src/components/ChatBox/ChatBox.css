@@ -42,3 +42,7 @@
   width: 90%;
   margin: 0.3rem 0;
 }
+
+.Image {
+  max-height: 200px;
+}
