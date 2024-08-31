@@ -35,6 +35,7 @@ const MessageInput: React.FC<MessageInputProps> = ({ onSendMessage }) => {
   const [input, setInput] = useState<string>("");
   const [showComboBox, setShowComboBox] = useState(false);
   const [suggestions, setSuggestions] = useState<string[]>([]);
+  const maxLength = 600;
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -77,6 +78,12 @@ const MessageInput: React.FC<MessageInputProps> = ({ onSendMessage }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (input.length > maxLength) {
+      alert(`Input cannot exceed ${maxLength} characters.`);
+      return;
+    }
+
     const message = {
       id: Math.random().toString(36).slice(2, 9),
       senderId: "user",
