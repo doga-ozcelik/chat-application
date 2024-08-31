@@ -1,6 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import "./ChatBox.css";
 import { Message } from "../../types";
+import useScrollToBottom from "../../hooks/useScrollToBottom";
 
 interface ChatBoxProps {
   messages: Message[];
@@ -9,11 +10,7 @@ interface ChatBoxProps {
 const ChatBox: React.FC<ChatBoxProps> = ({ messages }) => {
   const chatBoxRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (chatBoxRef.current) {
-      chatBoxRef.current.scrollTop = chatBoxRef.current.scrollHeight;
-    }
-  }, [messages]);
+  useScrollToBottom(chatBoxRef, messages);
 
   return (
     <div className="Chat-box-container" ref={chatBoxRef}>
