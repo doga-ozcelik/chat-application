@@ -118,7 +118,11 @@ const MessageInput: React.FC<MessageInputProps> = ({ onSendMessage }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="Input-container">
+    <form
+      onSubmit={handleSubmit}
+      data-testid="message-input-form"
+      className="Input-container"
+    >
       {suggestions.length > 0 && (
         <ul className="List">
           {suggestions.map((suggestion, index) => (
