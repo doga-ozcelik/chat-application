@@ -14,29 +14,38 @@ This project is a simple chat application built with React and TypeScript.
 ### Installation
 
 1. Clone the repository:
+
 ```bash
   https://github.com/berkpeker2707/WAIPE.git
 ```
 
 2. Install dependencies:
+
 ```bash
   npm install
 ```
 
-### Installation
+### Running the Application
 
 To start the application in development mode, run:
+
 ```bash
   npm start
 ```
+
 This will start the application and open it in your default browser at `http://localhost:3000`.
 
 ### Running Tests
 
 To run the unit and integration tests:
+
 ```bash
   npm test
 ```
+
+## Deployment
+
+This project is deployed using [Vercel](https://vercel.com/), a platform for frontend developers to host their web apps.
 
 ## Explanation of Key Design Decisions and Trade-offs
 
