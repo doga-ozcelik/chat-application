@@ -15,4 +15,16 @@ describe("MessageInput Component", () => {
 
     expect(mockOnSendMessage).toHaveBeenCalled();
   });
+
+  test("does not call onSendMessage when input exceeds the character limit", () => {
+    const maxLength = 600;
+    render(<MessageInput onSendMessage={mockOnSendMessage} />);
+
+    const inputElement = screen.getByPlaceholderText("Type a message...");
+    fireEvent.change(inputElement, {
+      target: { value: "a".repeat(maxLength + 1) },
+    });
+
+    expect(mockOnSendMessage).not.toHaveBeenCalled();
+  });
 });
