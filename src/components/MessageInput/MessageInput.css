@@ -68,3 +68,10 @@
     background-color: #c9c9c9;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .Input-container {
+    position: relative;
+    bottom: 0;
+  }
+}
